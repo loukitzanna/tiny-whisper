@@ -1,0 +1,28 @@
+{
+  "name": "ExpoTinyWhisper",
+  "displayName": "ExpoTinyWhisper",
+  "expo": {
+    "name": "ExpoTinyWhisper",
+    "description": "No description",
+    "slug": "ExpoTinyWhisper",
+    "privacy": "public",
+    "sdkVersion": "25.0.0",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "primaryColor": "#cccccc",
+    "icon": "./App/Images/icon.png",
+    "splash": {
+      "image": "./App/Images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "packagerOpts": {
+      "assetExts": [
+        "ttf"
+      ]
+    },
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}
