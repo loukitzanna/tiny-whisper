@@ -1,48 +1,48 @@
-import React from 'react'
-import { ScrollView, Text, Image, View, TouchableOpacity } from 'react-native'
-import { Images } from './DevTheme'
-import ButtonBox from './ButtonBox'
-import { StackNavigator } from 'react-navigation'
+import React from 'react';
+import { ScrollView, Text, Image, View, TouchableOpacity } from 'react-native';
+import { Images } from './DevTheme';
+import ButtonBox from './ButtonBox';
+import { StackNavigator } from 'react-navigation';
 // Screens
-import APITestingScreen from './APITestingScreen'
-import ComponentExamplesScreen from './ComponentExamplesScreen'
-import PluginExamplesScreen from './PluginExamplesScreen'
-import ThemeScreen from './ThemeScreen'
-import FaqScreen from './FaqScreen'
+import APITestingScreen from './APITestingScreen';
+import ComponentExamplesScreen from './ComponentExamplesScreen';
+import PluginExamplesScreen from './PluginExamplesScreen';
+import ThemeScreen from './ThemeScreen';
+import FaqScreen from './FaqScreen';
 
 // Styles
-import styles from './Styles/PresentationScreenStyles'
+import styles from './Styles/PresentationScreenStyles';
 
 class PresentationScreen extends React.Component {
   openComponents = () => {
-    this.props.navigation.navigate('ComponentExamplesScreen')
+    this.props.navigation.navigate('ComponentExamplesScreen');
   }
 
   openUsage = () => {
-    this.props.navigation.navigate('PluginExamplesScreen')
+    this.props.navigation.navigate('PluginExamplesScreen');
   }
 
   openApi = () => {
-    this.props.navigation.navigate('APITestingScreen')
+    this.props.navigation.navigate('APITestingScreen');
   }
 
   openTheme = () => {
-    this.props.navigation.navigate('ThemeScreen')
+    this.props.navigation.navigate('ThemeScreen');
   }
 
   openFaq = () => {
-    this.props.navigation.navigate('FaqScreen')
+    this.props.navigation.navigate('FaqScreen');
   }
 
-  render () {
+  render() {
     return (
       <View style={styles.mainContainer}>
-        <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
+        <Image source={Images.background} style={styles.backgroundImage} resizeMode="stretch" />
         <TouchableOpacity onPress={this.props.screenProps.toggle} style={{
           position: 'absolute',
           paddingTop: 30,
           paddingHorizontal: 10,
-          zIndex: 10
+          zIndex: 10,
         }}>
           <Image source={Images.closeButton} />
         </TouchableOpacity>
@@ -56,23 +56,23 @@ class PresentationScreen extends React.Component {
             are available below.
           </Text>
           <View style={styles.buttonsContainer}>
-            <ButtonBox onPress={this.openComponents} style={styles.componentButton} image={Images.components} text='Components' />
-            <ButtonBox onPress={this.openUsage} style={styles.usageButton} image={Images.usageExamples} text='Plugin Examples' />
+            <ButtonBox onPress={this.openComponents} style={styles.componentButton} image={Images.components} text="Components" />
+            <ButtonBox onPress={this.openUsage} style={styles.usageButton} image={Images.usageExamples} text="Plugin Examples" />
           </View>
           <View style={styles.buttonsContainer}>
-            <ButtonBox onPress={this.openApi} style={styles.apiButton} image={Images.api} text='API Testing' />
-            <ButtonBox onPress={this.openTheme} image={Images.theme} text='Theme' />
+            <ButtonBox onPress={this.openApi} style={styles.apiButton} image={Images.api} text="API Testing" />
+            <ButtonBox onPress={this.openTheme} image={Images.theme} text="Theme" />
           </View>
           <View style={styles.buttonsContainer}>
-            <ButtonBox style={styles.deviceButton} image={Images.deviceInfo} text='Device Info N/A' />
-            <ButtonBox onPress={this.openFaq} style={styles.usageButton} image={Images.faq} text='FAQ' />
+            <ButtonBox style={styles.deviceButton} image={Images.deviceInfo} text="Device Info N/A" />
+            <ButtonBox onPress={this.openFaq} style={styles.usageButton} image={Images.faq} text="FAQ" />
           </View>
         </ScrollView>
         <View style={styles.banner}>
           <Text style={styles.bannerLabel}>Made with ❤️ by Infinite Red</Text>
         </View>
       </View>
-    )
+    );
   }
 }
 
@@ -82,11 +82,11 @@ export default StackNavigator({
   ComponentExamplesScreen: {screen: ComponentExamplesScreen},
   PluginExamplesScreen: {screen: PluginExamplesScreen},
   ThemeScreen: {screen: ThemeScreen},
-  FaqScreen: {screen: FaqScreen}
+  FaqScreen: {screen: FaqScreen},
 }, {
   cardStyle: {
     opacity: 1,
-    backgroundColor: '#3e243f'
+    backgroundColor: '#3e243f',
   },
   initialRouteName: 'PresentationScreen',
   headerMode: 'none',
@@ -97,8 +97,8 @@ export default StackNavigator({
         <TouchableOpacity onPress={() => window.alert('pop')} ><Image source={Images.closeButton} style={{marginHorizontal: 10}} /></TouchableOpacity>
       ),
       style: {
-        backgroundColor: '#3e243f'
-      }
-    }
-  }
-})
+        backgroundColor: '#3e243f',
+      },
+    },
+  },
+});

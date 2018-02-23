@@ -1,0 +1,16 @@
+{
+  "extends": ["standard"],
+  "rules": {
+    "class-methods-use-this": "off",
+    "comma-dangle": ["error", "always-multiline"],
+    "no-console": "warn",
+    "no-warning-comments": "warn",
+    "semi": ["error", "always"],
+    "space-before-function-paren": ["error", {"anonymous": "always", "named": "never"}],
+    "jsx-quotes": ["error", "prefer-double"],
+    "no-unused-vars": "error"
+  },
+  "env": {
+    "es6": true
+  }
+}
