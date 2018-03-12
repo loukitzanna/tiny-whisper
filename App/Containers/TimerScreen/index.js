@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Audio } from 'expo';
+import { Audio, LinearGradient } from 'expo';
+
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 import DevscreensButton from '../../../ignite/DevScreens/DevscreensButton.js';
@@ -46,9 +47,14 @@ class TimerScreen extends React.Component {
   }
 
   mountSound = async () => {
-    const source = require('../../assets/ping.wav');
+    const source = require('../../assets/alert_ping.wav');
+    // console.warn(source);
     const { sound, status } = await Audio.Sound.create(source);
+    // console.warn(status);
     this.ping = sound;
+
+    await this.ping.setVolumeAsync(1);
+    console.log('set volume waaaaay up');
   }
 
   stopTimer = (timer) => {
@@ -58,6 +64,14 @@ class TimerScreen extends React.Component {
   handleStopTimers = (e) => {
     this.stopTimer(this.timer);
     this.stopTimer(this.innerTimer);
+  }
+
+  handlePlaySound = async () => {
+    if (this.ping) {
+      await this.ping.playFromPositionAsync(0);
+    } else {
+      console.warn('couldnt ping');
+    }
   }
 
   startTimer = async (e) => {
@@ -129,12 +143,13 @@ class TimerScreen extends React.Component {
       <View
         style={styles.container}
       >
+        
         <AnimatedCircularProgress
           size={200}
           width={3}
           fill={fill}
-          tintColor={Colors.blush}
-          backgroundColor={Colors.banner}
+          tintColor={Colors.violet}
+          backgroundColor={Colors.blush}
           rotation={0}
         >
           {
@@ -143,8 +158,8 @@ class TimerScreen extends React.Component {
                 size={150}
                 width={4}
                 fill={innerFill}
-                tintColor={Colors.dawn}
-                backgroundColor={Colors.banner}
+                tintColor={Colors.lightClementine}
+                backgroundColor={Colors.dawn}
                 rotation={0}
               >
                 {(innerFill) => {
@@ -169,7 +184,6 @@ class TimerScreen extends React.Component {
         </AnimatedCircularProgress>
         <View style={styles.buttonContainer}>
           <Text style={styles.text}>{this.renderText()}</Text>
-          <DevscreensButton />
         </View>
 
         <View style={styles.buttonContainer}>
@@ -184,6 +198,10 @@ class TimerScreen extends React.Component {
           <FullButton
             onPress={this.resetTimer}
             text={'Reset Timer'}
+          />
+          <FullButton
+            onPress={this.handlePlaySound}
+            text={'Play Sound'}
           />
         </View>
 

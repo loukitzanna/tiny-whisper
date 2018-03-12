@@ -8,12 +8,12 @@ export default StyleSheet.create({
     borderBottomColor: Colors.lightClementine,
     borderTopWidth: 1,
     borderBottomWidth: 1,
-    backgroundColor: Colors.banner
+    backgroundColor: Colors.snow
   },
   buttonText: {
     margin: 18,
     textAlign: 'center',
-    color: Colors.dawn,
+    color: Colors.blush,
     fontSize: Fonts.size.medium,
     fontFamily: Fonts.type.bold
   }

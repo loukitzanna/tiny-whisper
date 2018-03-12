@@ -9,7 +9,7 @@ export default StyleSheet.create({
     left: 10,
     width: 120,
     textAlign: 'center',
-    color: Colors.lightClementine,
+    color: Colors.blush,
     fontSize: 50,
     fontWeight: '100',
   },
@@ -18,12 +18,13 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     // backgroundColor: '#152d44',
-    backgroundColor: Colors.border,
+    // backgroundColor: Colors.border,
+    backgroundColor: 'white',
     padding: 50,
   },
   text: {
     ...Fonts.style.h4,
-    color: Colors.lightClementine,
+    color: Colors.blush,
     marginBottom: 24,
     textAlign: 'center',
   },
@@ -31,3 +32,4 @@ export default StyleSheet.create({
     width: Metrics.screenWidth - (4 * Metrics.marginHorizontal),
   },
 });
+
